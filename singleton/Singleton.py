@@ -7,8 +7,13 @@ class Singleton(object):
     fila de impressão etc.
     '''   
     
+    
     def __new__(cls):
-        if not hasattr(cls, 'isinstance'):
+        '''
+        O método _new_ é executado antes do método _init_
+        '''
+        
+        if not hasattr(cls, 'instance'):
             cls.instance = super(Singleton, cls)
             print(f'Criando um objeto {cls.instance}')
         return cls.instance
